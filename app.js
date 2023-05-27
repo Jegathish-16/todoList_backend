@@ -3,6 +3,9 @@ const app = express();
 const PORT = 3500;
 const todo_list = require('./Routes/todo_list')
 
+app.use(express.urlencoded({extended:true}))
+app.use(express.json());
+
 app.get('/',(require,response)=>{
     response.send("Landing page");
 })
